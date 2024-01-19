@@ -1,6 +1,8 @@
+import axios from 'axios'
 import './TableContact.css'
 
 interface Contacts{
+    id: number;
     nome_pessoa: string
     numero_pessoa: string
     observacao?:string
@@ -11,6 +13,11 @@ interface TableProps {
 }
 
 const TableContact: React.FC<TableProps> = ({contacts}) => {
+
+    const handleDelete = (id:number) => {
+        axios.delete(`http://localhost:8080/lista/${id}`)
+    }
+
   return (
     <table className='contact-table'>
         <thead>
@@ -18,6 +25,7 @@ const TableContact: React.FC<TableProps> = ({contacts}) => {
                 <th>Nome</th>
                 <th>Numero</th>
                 <th>Obs:</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +34,7 @@ const TableContact: React.FC<TableProps> = ({contacts}) => {
                     <td>{contact.nome_pessoa}</td>
                     <td>{contact.numero_pessoa}</td>
                     <td>{contact.observacao ? contact.observacao : 'Sem obs'}</td>
+                    <td style={{cursor:'pointer'}} onClick={() => handleDelete(contact.id)}>X</td>
                 </tr>
             )) 
         ) : (
