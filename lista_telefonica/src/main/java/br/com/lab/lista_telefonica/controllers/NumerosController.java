@@ -1,13 +1,16 @@
 package br.com.lab.lista_telefonica.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +18,6 @@ import br.com.lab.lista_telefonica.dtos.NumerosDto;
 import br.com.lab.lista_telefonica.models.NumerosEntity;
 import br.com.lab.lista_telefonica.repositories.NumerosRepository;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import jakarta.validation.Valid;
 
 @RestController
@@ -43,5 +45,14 @@ public class NumerosController {
         return ResponseEntity.ok(numerosList);
         
     }
-    
+    @CrossOrigin(origins = "*", allowedHeaders ="*")
+    @DeleteMapping("/lista/{id}")
+    public ResponseEntity<Object> deletarNumerosEntity(@PathVariable(value = "id") Long id){
+        Optional<NumerosEntity> numeroOne = numerosRepository.findById(id);
+        if (numeroOne.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Número não econtrado");
+        }
+        numerosRepository.delete(numeroOne.get());
+        return ResponseEntity.status(HttpStatus.OK).body("Número deletado com sucesso");
+    } 
 }
