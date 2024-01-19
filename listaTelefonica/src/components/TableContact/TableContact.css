@@ -1,0 +1,19 @@
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .contact-table th, .contact-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .contact-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .contact-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
