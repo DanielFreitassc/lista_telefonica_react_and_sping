@@ -11,7 +11,7 @@ function App() {
   const [contacts, setContacts] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:8080/lista')
+    axios.get('https://backend-lista.onrender.com/lista')
     .then((res) => {
       setContacts(res.data)
     }).catch((error) => {
