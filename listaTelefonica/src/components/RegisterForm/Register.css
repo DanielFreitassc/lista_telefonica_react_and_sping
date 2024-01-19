@@ -1,5 +1,8 @@
 input{
     border-radius: 5px;
+    width: 90%;
+    height: 20px;
+    margin-bottom: 7px;
 }
 
 label {
@@ -9,7 +12,7 @@ label {
 
 .erro{
     color: red;
-    font-size: 12px;
+    font-size: 14px;
     margin: 5px 5px;
 }
 
