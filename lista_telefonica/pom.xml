@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.lab</groupId>
 	<artifactId>lista_telefonica</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>lista_telefonica</name>
 	<description>Backend para uma lista telefonica</description>
 	<properties>
