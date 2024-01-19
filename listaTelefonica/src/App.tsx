@@ -20,10 +20,12 @@ function App() {
   }, [contacts])
 
   return (
-    <>
-      <RegisterForm />
-      <TableContact contacts={contacts} />
-    </>
+    <div className='container'>
+      <main className='container-main'>
+        <RegisterForm />
+        <TableContact contacts={contacts} />
+      </main>
+    </div>
   )
 }
 

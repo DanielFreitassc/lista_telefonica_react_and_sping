@@ -1,4 +1,5 @@
 import React from 'react';
+import './Register.css'
 import { Formik, Field, ErrorMessage, Form } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios'
@@ -37,21 +38,21 @@ const RegisterForm: React.FC = () => {
       <Form>
         <div>
           <label htmlFor="nome">Nome:</label>
-          <Field type="text" id="nome" name="nome" />
-          <ErrorMessage name="nome" component="div" />
+          <Field type="text" id="nome" name="nome" placeholder="Digite o nome..." />
+          <ErrorMessage name="nome" component="div" className='erro' />
         </div>
         <div>
           <label htmlFor="num">Número:</label>
-          <Field type="text" id="num" name="num" />
-          <ErrorMessage name="num" component="div" />
+          <Field type="text" id="num" name="num" placeholder="Digite o numero..." />
+          <ErrorMessage name="num" component="div" className='erro' />
         </div>
         <div>
           <label htmlFor="obs">Observação:</label>
-          <Field type="text" id="obs" name="obs" />
-          <ErrorMessage name="obs" component="div" />
+          <Field type="text" id="obs" name="obs" placeholder="Opcional" />
+          <ErrorMessage name="obs" component="div" className='erro' />
         </div>
 
-        <button type="submit">Submit</button>
+        <button className='submit-bottom' type="submit">Cadastrar</button>
       </Form>
     </Formik>
   );

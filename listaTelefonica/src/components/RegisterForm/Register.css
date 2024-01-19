@@ -1,0 +1,18 @@
+input{
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+.erro{
+    color: red;
+    font-size: 12px;
+    margin: 5px 5px;
+}
+
+.submit-bottom{
+    margin-top: 5px;
+}

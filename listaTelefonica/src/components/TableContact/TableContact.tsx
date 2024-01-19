@@ -24,7 +24,7 @@ const TableContact: React.FC<TableProps> = ({contacts}) => {
             <tr>
                 <th>Nome</th>
                 <th>Numero</th>
-                <th>Obs:</th>
+                <th>Obs</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -39,7 +39,7 @@ const TableContact: React.FC<TableProps> = ({contacts}) => {
             )) 
         ) : (
             <tr>
-                <td colSpan={3}>Vazia</td>
+                <td colSpan={4}>Vazia</td>
             </tr>
 
         )}
