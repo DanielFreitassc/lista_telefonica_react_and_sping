@@ -17,7 +17,11 @@ const RegisterForm: React.FC = () => {
 
   // Função de envio do formulário
   const onSubmit = (values: FormValues) => {
-    axios.post('http://localhost:3001', values).then((res) => {
+    axios.post('http://localhost:8080/lista',{
+      "nome_pessoa": values.nome,
+      "numero_pessoa": values.num,
+      "observacao": values.obs
+    }).then((res) => {
       console.log(res);
     }).catch((error) => {
       console.log(error)

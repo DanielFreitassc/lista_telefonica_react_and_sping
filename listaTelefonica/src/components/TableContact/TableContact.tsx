@@ -1,9 +1,9 @@
 import './TableContact.css'
 
 interface Contacts{
-    nome: string
-    num: string
-    obs?:string
+    nome_pessoa: string
+    numero_pessoa: string
+    observacao?:string
 }
 
 interface TableProps {
@@ -23,9 +23,9 @@ const TableContact: React.FC<TableProps> = ({contacts}) => {
         <tbody>
             {contacts.length > 0 ? (contacts.map((contact, index) => (
                 <tr key={index}>
-                    <td>{contact.nome}</td>
-                    <td>{contact.num}</td>
-                    <td>{contact.obs ? contact.obs : 'Sem obs'}</td>
+                    <td>{contact.nome_pessoa}</td>
+                    <td>{contact.numero_pessoa}</td>
+                    <td>{contact.observacao ? contact.observacao : 'Sem obs'}</td>
                 </tr>
             )) 
         ) : (
