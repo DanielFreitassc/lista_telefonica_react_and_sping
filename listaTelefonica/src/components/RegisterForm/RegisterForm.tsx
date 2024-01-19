@@ -10,7 +10,10 @@ import { FormValues } from './RegisterInterface.s';
 // Defina o esquema Yup para validação
 const validationSchema = Yup.object({
   nome: Yup.string().max(100, 'No máximo 100 caracteres').required('Campo obrigatório'),
-  num: Yup.string().max(13, 'No máximo 13 caracteres').required('Campo obrigatório'),
+  num: Yup.string()
+    .max(13, 'No máximo 13 caracteres')
+    .matches(/^\d+$/, 'Deve conter apenas números')
+    .required('Campo obrigatório'),
   obs: Yup.string(),
 });
 
