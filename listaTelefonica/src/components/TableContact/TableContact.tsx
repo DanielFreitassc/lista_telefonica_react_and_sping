@@ -15,7 +15,7 @@ interface TableProps {
 const TableContact: React.FC<TableProps> = ({contacts}) => {
 
     const handleDelete = (id:number) => {
-        axios.delete(`https://backend-lista.onrender.com/lista/${id}`)
+        axios.delete(`https://backend-telefonica.onrender.com/lista/${id}`)
     }
 
   return (

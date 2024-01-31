@@ -21,7 +21,7 @@ const RegisterForm: React.FC = () => {
 
   // Função de envio do formulário
   const onSubmit = (values: FormValues) => {
-    axios.post('https://backend-lista.onrender.com/lista',{
+    axios.post('https://backend-telefonica.onrender.com/lista',{
       "nome_pessoa": values.nome,
       "numero_pessoa": values.num,
       "observacao": values.obs
