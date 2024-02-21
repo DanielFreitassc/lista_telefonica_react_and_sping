@@ -1,5 +1,6 @@
 import axios from 'axios'
 import './TableContact.css'
+import { FaRegTrashAlt } from "react-icons/fa";
 
 interface Contacts{
     id: number;
@@ -34,7 +35,7 @@ const TableContact: React.FC<TableProps> = ({contacts}) => {
                     <td>{contact.nome_pessoa}</td>
                     <td>{contact.numero_pessoa}</td>
                     <td>{contact.observacao ? contact.observacao : 'Sem obs'}</td>
-                    <td style={{cursor:'pointer'}} onClick={() => handleDelete(contact.id)}>X</td>
+                    <td style={{cursor:'pointer'}} onClick={() => handleDelete(contact.id)}><FaRegTrashAlt /></td>
                 </tr>
             )) 
         ) : (
